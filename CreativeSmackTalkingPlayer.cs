@@ -15,7 +15,7 @@ public class CreativeSmackTalkingPlayer : Player
 
         string Taunt = taunts[randomTaunt];
 
-        Console.WriteLine($"{Name} taunts {Taunt}");
+        Console.WriteLine($"{Name} taunts '{Taunt}'");
 
         return new Random().Next(DiceSize) + 1;
     }

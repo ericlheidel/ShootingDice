@@ -50,53 +50,11 @@ List<Player> players = new List<Player>() {
 };
 
 
-//++   /$$$$$$$$  /$$$$$$$$   /$$$$$$   /$$$$$$$$
-//++  |__  $$__/ | $$_____/  /$$__  $$ |__  $$__/
-//++     | $$    | $$       | $$  \__/    | $$
-//++     | $$    | $$$$$    |  $$$$$$     | $$
-//++     | $$    | $$__/     \____  $$    | $$
-//++     | $$    | $$        /$$  \ $$    | $$
-//++     | $$    | $$$$$$$$ |  $$$$$$/    | $$
-//++     |__/    |________/  \______/     |__/
-
-//++   /$$        /$$$$$$   /$$$$$$   /$$$$$$$$  /$$$$$$
-//++  | $$       |_  $$_/  /$$__  $$ |__  $$__/ /$$__  $$
-//++  | $$         | $$   | $$  \__/    | $$   | $$  \__/
-//++  | $$         | $$   |  $$$$$$     | $$   |  $$$$$$
-//++  | $$         | $$    \____  $$    | $$    \____  $$
-//++  | $$         | $$    /$$  \ $$    | $$    /$$  \ $$
-//++  | $$$$$$$$  /$$$$$$ |  $$$$$$/    | $$   |  $$$$$$/
-//++  |________/ |______/  \______/     |__/    \______/
-
-List<Player> creativeSmackFirstTest = new List<Player>()
-{
-    CleverMeanie, player1
-};
-
-List<Player> humanFirstTest = new List<Player>()
-{
-    Human, player1
-};
-
-List<Player> largeFirstTest = new List<Player>()
-{
-    large, player1
-};
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // PlayMany(players);
-
-PlayTest(creativeSmackFirstTest);
-PlayTest(creativeSmackFirstTest);
-PlayTest(creativeSmackFirstTest);
-PlayTest(creativeSmackFirstTest);
-PlayTest(creativeSmackFirstTest);
-PlayTest(creativeSmackFirstTest);
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+CleverMeanie.Play(player1);
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 static void PlayMany(List<Player> players)
 {
@@ -124,27 +82,6 @@ static void PlayMany(List<Player> players)
         // Make adjacent players play one another
         Player player1 = shuffledPlayers[i];
         Player player2 = shuffledPlayers[i + 1];
-        player1.Play(player2);
-    }
-}
-
-static void PlayTest(List<Player> players)
-{
-    Console.WriteLine();
-
-    int maxIndex = players.Count;
-    if (maxIndex % 2 != 0)
-    {
-        maxIndex = maxIndex - 1;
-    }
-
-    for (int i = 0; i < maxIndex; i += 2)
-    {
-        Console.WriteLine("-------------------");
-
-        // Make adjacent players play one another
-        Player player1 = players[i];
-        Player player2 = players[i + 1];
         player1.Play(player2);
     }
 }
