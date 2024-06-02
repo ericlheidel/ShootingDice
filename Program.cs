@@ -53,7 +53,7 @@ List<Player> players = new List<Player>() {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // PlayMany(players);
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-DumbMeanie.Play(CleverMeanie);
+Biggie.Play(player1);
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 static void PlayMany(List<Player> players)
