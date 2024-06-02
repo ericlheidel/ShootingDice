@@ -31,7 +31,7 @@ HumanPlayer Human = new HumanPlayer();
 Human.Name = "Mister Human";
 
 OneHigherPlayer OneUp = new OneHigherPlayer();
-OneUp.Name = " One-Up";
+OneUp.Name = "One-Up";
 
 SmackTalkingPlayer DumbMeanie = new SmackTalkingPlayer();
 DumbMeanie.Name = "Dumb Meanie";
@@ -46,14 +46,14 @@ UpperHalfPlayer Biggie = new UpperHalfPlayer();
 Biggie.Name = "Biggie";
 
 List<Player> players = new List<Player>() {
-    player1, player2, player3, large, CleverMeanie, Human, DumbMeanie, Sean, BigSean, Biggie
+    player1, player2, player3, large, CleverMeanie, Human, OneUp, DumbMeanie, Sean, BigSean, Biggie
 };
 
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // PlayMany(players);
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-CleverMeanie.Play(player1);
+OneUp.Play(CleverMeanie);
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 static void PlayMany(List<Player> players)
