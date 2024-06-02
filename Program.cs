@@ -6,29 +6,97 @@ player1.Name = "Bob";
 Player player2 = new Player();
 player2.Name = "Sue";
 
-player2.Play(player1);
+// player2.Play(player1);
 
-Console.WriteLine("-------------------");
+// Console.WriteLine("-------------------");
 
 Player player3 = new Player();
 player3.Name = "Wilma";
 
-player3.Play(player2);
+// player3.Play(player2);
 
-Console.WriteLine("-------------------");
+// Console.WriteLine("-------------------");
 
 Player large = new LargeDicePlayer();
 large.Name = "Bigun Rollsalot";
 
-player1.Play(large);
+// player1.Play(large);
 
-Console.WriteLine("-------------------");
+// Console.WriteLine("-------------------");
+
+CreativeSmackTalkingPlayer CleverMeanie = new CreativeSmackTalkingPlayer();
+CleverMeanie.Name = "Clever Meanie";
+
+HumanPlayer Human = new HumanPlayer();
+Human.Name = "Mister Human";
+
+OneHigherPlayer OneUp = new OneHigherPlayer();
+OneUp.Name = " One-Up";
+
+SmackTalkingPlayer DumbMeanie = new SmackTalkingPlayer();
+DumbMeanie.Name = "Dumb Meanie";
+
+SoreLoserPlayer Sean = new SoreLoserPlayer();
+Sean.Name = "Sean";
+
+SoreLoserUpperHalfPlayer BigSean = new SoreLoserUpperHalfPlayer();
+BigSean.Name = "Big Sean";
+
+UpperHalfPlayer Biggie = new UpperHalfPlayer();
+Biggie.Name = "Biggie";
 
 List<Player> players = new List<Player>() {
-    player1, player2, player3, large
+    player1, player2, player3, large, CleverMeanie, Human, DumbMeanie, Sean, BigSean, Biggie
 };
 
-PlayMany(players);
+
+//++   /$$$$$$$$  /$$$$$$$$   /$$$$$$   /$$$$$$$$
+//++  |__  $$__/ | $$_____/  /$$__  $$ |__  $$__/
+//++     | $$    | $$       | $$  \__/    | $$
+//++     | $$    | $$$$$    |  $$$$$$     | $$
+//++     | $$    | $$__/     \____  $$    | $$
+//++     | $$    | $$        /$$  \ $$    | $$
+//++     | $$    | $$$$$$$$ |  $$$$$$/    | $$
+//++     |__/    |________/  \______/     |__/
+
+//++   /$$        /$$$$$$   /$$$$$$   /$$$$$$$$  /$$$$$$
+//++  | $$       |_  $$_/  /$$__  $$ |__  $$__/ /$$__  $$
+//++  | $$         | $$   | $$  \__/    | $$   | $$  \__/
+//++  | $$         | $$   |  $$$$$$     | $$   |  $$$$$$
+//++  | $$         | $$    \____  $$    | $$    \____  $$
+//++  | $$         | $$    /$$  \ $$    | $$    /$$  \ $$
+//++  | $$$$$$$$  /$$$$$$ |  $$$$$$/    | $$   |  $$$$$$/
+//++  |________/ |______/  \______/     |__/    \______/
+
+List<Player> creativeSmackFirstTest = new List<Player>()
+{
+    CleverMeanie, player1
+};
+
+List<Player> humanFirstTest = new List<Player>()
+{
+    Human, player1
+};
+
+List<Player> largeFirstTest = new List<Player>()
+{
+    large, player1
+};
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+// PlayMany(players);
+
+PlayTest(creativeSmackFirstTest);
+PlayTest(creativeSmackFirstTest);
+PlayTest(creativeSmackFirstTest);
+PlayTest(creativeSmackFirstTest);
+PlayTest(creativeSmackFirstTest);
+PlayTest(creativeSmackFirstTest);
 
 static void PlayMany(List<Player> players)
 {
@@ -53,9 +121,30 @@ static void PlayMany(List<Player> players)
     {
         Console.WriteLine("-------------------");
 
-        // Make adjacent players play noe another
+        // Make adjacent players play one another
         Player player1 = shuffledPlayers[i];
         Player player2 = shuffledPlayers[i + 1];
+        player1.Play(player2);
+    }
+}
+
+static void PlayTest(List<Player> players)
+{
+    Console.WriteLine();
+
+    int maxIndex = players.Count;
+    if (maxIndex % 2 != 0)
+    {
+        maxIndex = maxIndex - 1;
+    }
+
+    for (int i = 0; i < maxIndex; i += 2)
+    {
+        Console.WriteLine("-------------------");
+
+        // Make adjacent players play one another
+        Player player1 = players[i];
+        Player player2 = players[i + 1];
         player1.Play(player2);
     }
 }
